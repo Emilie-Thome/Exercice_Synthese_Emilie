@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <ul>
+    {% for track in all_tracks %}
+        <li>{{ track.name }}</li>
+    {% empty %}
+        <p>There is no track.</p>
+    {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <ul>
+    {% for album in all_albums %}
+        <li><a href="search">{{ album.title }}</a></li>
+    {% empty %}
+        <p>There is no album.</p>
+    {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,9 +1,12 @@
-<h1>Every artist of the Data Base :</h1>
+{% extends "base.html" %}
 
-{% for artist in all_artists %}
-    <div class="artist">
-    	<h3>{{ artist.name }}</h3>
-    </div>
-{% empty %}
-    <p>There is no artist.</p>
-{% endfor %}
+{% block content %}
+    <ul>
+    {% for artist in all_artists %}
+        <li>
+            <a href="{% url 'albums_from_artist' artist.id %}">{{ artist.name }}</a></li>
+    {% empty %}
+        <p>Empty</p>
+    {% endfor %}
+    </ul>
+{% endblock %}
