@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<center>
+    <h1>{{ track.name }}</h1>
+    <h3><i>{{ track.album }}</i> - {{ track.album.artist }}</h3>
+    <div>
+        <h4 id="min"></h4>
+        <h4>m</h4>
+        <h4 id="sec"></h4>
+        <h4>s</h4>
+        <h4 id="msec"></h4>
+        <h4>ms</h4>
+    </div>
+    <h8><i>Prix unitaire : {{ track.unitprice }}$</i></h8>
+</center>
+
+<script>
+var t = {{track.milliseconds}};
+var ms = t%1000;
+var s = ((t-ms)/1000)%60
+var m = (t-s*1000-ms)/60000;
+document.getElementById("msec").innerHTML = ms;
+document.getElementById("sec").innerHTML = s;
+document.getElementById("min").innerHTML = m;
+</script>
+{% endblock %}

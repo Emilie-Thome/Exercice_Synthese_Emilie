@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <form action="search" method="get">
+        <label for="s_artist">Search an artist : </label>
+        <select name="query-artist" id="s_artist">
+            {% for artist in all_artists %}
+                <option value="{{ artist.id }}">{{ artist.name }}</option>
+            {% endfor %}}
+        </select>
+        <button type="submit">Search Artist</button>
+    </form>
+    <br />
+    <form action="search" method="get">
+        <label for="s_album">Search an album : </label>
+        <select name="query-album" id="s_album">
+            {% for album in all_albums %}
+                <option value="{{ album.id }}">{{ album.title }}</option>
+            {% endfor %}}
+        </select>
+        <button type="submit">Search Album</button>
+    </form>
+    <br />
+    <form action="search" method="get">
+        <label for="s_track">Search a track : </label>
+        <select name="query-track" id="s_track">
+            {% for track in all_tracks %}
+                <option value="{{ track.id }}">{{ track.name }}</option>
+            {% endfor %}}
+        </select>
+        <button type="submit">Search Track</button>
+    </form>
+    <br />
+{% endblock %}

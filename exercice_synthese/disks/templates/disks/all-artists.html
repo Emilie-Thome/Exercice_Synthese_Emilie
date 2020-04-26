@@ -1,12 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <h2>ARTISTS</h2>
     <ul>
     {% for artist in all_artists %}
-        <li>
-            <a href="{% url 'albums_from_artist' artist.id %}">{{ artist.name }}</a></li>
-    {% empty %}
-        <p>Empty</p>
+        <li><a href="/disks/artist/{{artist.id}}">{{ artist.name }}</a></li>
     {% endfor %}
     </ul>
 {% endblock %}

@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <h2>TRACKS</h2>
     <ul>
     {% for track in all_tracks %}
-        <li>{{ track.name }}</li>
-    {% empty %}
-        <p>There is no track.</p>
+        <li><a href="/disks/track/{{track.id}}">{{ track.name }}</a></li>
     {% endfor %}
     </ul>
 {% endblock %}
