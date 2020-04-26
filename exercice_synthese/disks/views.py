@@ -32,5 +32,5 @@ def all_tracks(request):
 def albums_from_artist(request, id):
     """ View all albums from an artist """
     the_artist = get_object_or_404(Artist, id=id)
-    albums = Album.objects.get(artist = the_artist)
+    albums = Album.objects.filter(artist = the_artist)
     return render(request, 'disks/all-albums.html', {'all_albums': albums})
