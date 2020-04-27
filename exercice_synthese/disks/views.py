@@ -2,6 +2,11 @@ from django.shortcuts import render, get_object_or_404
 from disks.models import Artist, Album, Track
 
 
+
+def home(request):
+    """ Test the base.html """
+    return render(request, 'disks/home.html',)
+
 def search(request):
     """ Search page """
     id_artist = request.GET.get('query-artist', '')
@@ -26,10 +31,6 @@ def search(request):
                                                    'all_albums': albums,
                                                    'all_tracks': tracks})
 
-
-def test_base(request):
-    """ Test the base.html """
-    return render(request, 'disks/mapage.html',)
 
 def all_artists(request):
     """ View all artists of the DB """
